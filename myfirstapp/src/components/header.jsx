@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-
+import '../App.css';
 
 
 class Header extends Component {
@@ -24,7 +24,8 @@ class Header extends Component {
       >
         <Nav.Link href="#action1">Home</Nav.Link>
         <Nav.Link href="#action2">Members</Nav.Link>
-        <NavDropdown title="About Us" id="navbarScrollingDropdown">
+        {/* renderMenuonMount help you to hover the dropdown menu */}
+        <NavDropdown title="About Us" id="navbarScrollingDropdown" renderMenuOnMount={true}>
           <NavDropdown.Item href="#action3">Vision</NavDropdown.Item>
           <NavDropdown.Item href="#action4">Events</NavDropdown.Item>
           <NavDropdown.Divider />
@@ -33,7 +34,7 @@ class Header extends Component {
           </NavDropdown.Item>
         </NavDropdown>
       </Nav>
-        <Button variant="outline-secondary" size="lg">Login</Button>
+        <Button variant="secondary" size="sm">Login</Button>
     </Navbar.Collapse>
   </Container>
 </Navbar>
